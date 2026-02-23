@@ -1,1 +1,125 @@
-@import 'tailwindcss';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendardvariable.css");
+@import "tailwindcss";
+
+/* ============================= */
+/* ========== THEME ============ */
+/* ============================= */
+
+@theme {
+  /* Font */
+  --font-sans:
+    "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+
+  /* ================= PRIMARY ================= */
+  --color-primary-500: #4269e9;
+  --color-primary-400: #799bf4;
+  --color-primary-300: #b5cafb;
+  --color-primary-200: #dfe8fe;
+  --color-primary-100: #f4f7ff;
+
+  /* ================= GRAY SCALE ================= */
+  --color-gray-900: #1d1f23;
+  --color-gray-800: #444a53;
+  --color-gray-700: #5e646e;
+  --color-gray-600: #7b818c;
+  --color-gray-500: #a2a8b1;
+  --color-gray-400: #cbd0d6;
+  --color-gray-300: #e4e7eb;
+  --color-gray-200: #eceff2;
+  --color-gray-100: #f9fafb;
+
+  --color-bg: #f5f6f8;
+  --color-white: #ffffff;
+
+  /* ================= TYPOGRAPHY ================= */
+  --text-h1: 24px;
+  --text-h1--line-height: 1.4;
+  --text-h1--font-weight: 700;
+
+  --text-h2: 22px;
+  --text-h2--line-height: 1.4;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 20px;
+  --text-h3--line-height: 1.4;
+  --text-h3--font-weight: 600;
+
+  --text-h4: 18px;
+  --text-h4--line-height: 1.4;
+  --text-h4--font-weight: 600;
+
+  --text-body1: 16px;
+  --text-body1--line-height: 1.4;
+  --text-body1--font-weight: 500;
+
+  --text-body2: 14px;
+  --text-body2--line-height: 1.4;
+  --text-body2--font-weight: 500;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 500;
+}
+
+/* ============================= */
+/* ========== BASE ============= */
+/* ============================= */
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900 antialiased font-sans;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+}
+
+/* ============================= */
+/* ===== TYPOGRAPHY UTILS ====== */
+/* ============================= */
+
+@utility text-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--text-h1--line-height);
+  font-weight: var(--text-h1--font-weight);
+}
+
+@utility text-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--text-h2--line-height);
+  font-weight: var(--text-h2--font-weight);
+}
+
+@utility text-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+  font-weight: var(--text-h3--font-weight);
+}
+
+@utility text-h4 {
+  font-size: var(--text-h4);
+  line-height: var(--text-h4--line-height);
+  font-weight: var(--text-h4--font-weight);
+}
+
+@utility text-body1 {
+  font-size: var(--text-body1);
+  line-height: var(--text-body1--line-height);
+  font-weight: var(--text-body1--font-weight);
+}
+
+@utility text-body2 {
+  font-size: var(--text-body2);
+  line-height: var(--text-body2--line-height);
+  font-weight: var(--text-body2--font-weight);
+}
+
+@utility text-caption {
+  font-size: var(--text-caption);
+  line-height: var(--text-caption--line-height);
+  font-weight: var(--text-caption--font-weight);
+}
