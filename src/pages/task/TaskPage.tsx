@@ -3,6 +3,7 @@ import ListView from "./components/ListView";
 import type { Task } from "./types/types";
 import TaskHeader from "./components/TaskHeader";
 import Pagination from "../../components/pagination";
+import KanvanView from "./components/KanvanView";
 
 type ViewMode = "list" | "kanban";
 
@@ -44,15 +45,38 @@ export default function TasksPage() {
         dueDate: "2026.02.09",
         status: "blocked",
       },
+      {
+        id: "5",
+        title: "랜딩 페이지 히어로 섹션 수정",
+        file: "https://www.",
+        priority: "normal",
+        dueDate: "2026.02.09",
+        status: "blocked",
+      },
+      {
+        id: "6",
+        title: "1332",
+        file: "https://www.",
+        priority: "normal",
+        dueDate: "2026.02.09",
+        status: "blocked",
+      },
     ],
     [],
   );
 
   return (
-    <div className="space-y-4">
+    <div className="bg-white">
       <TaskHeader view={view} onChangeView={setView} />
-      <ListView task={task} />
-      <Pagination />
+
+      {view === "list" ? (
+        <>
+          <ListView task={task} />
+          <Pagination />
+        </>
+      ) : (
+        <KanvanView task={task} />
+      )}
     </div>
   );
 }
