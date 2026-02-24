@@ -2,19 +2,7 @@ import IconFilter from "../../assets/icon-filter.svg";
 import IconSort from "../../assets/icon-sort.svg";
 import IconPlus from "../../assets/icon-plus.svg";
 import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../constants/status";
-
-// 임시 타입 정의 (실제 프로젝트 타입으로 교체해주세요)
-type ProjectStatus = "todo" | "inProgress" | "done" | "blocked";
-type Project = {
-  id: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  teamAvatars: string[];
-  extraTeamCount: number;
-  status: ProjectStatus;
-  progress: number;
-};
+import type { Project } from "../../types/project";
 
 // 임시 데이터
 const mockProjects: Project[] = [
@@ -38,18 +26,38 @@ const mockProjects: Project[] = [
     status: "done",
     progress: 42,
   },
+  {
+    id: "3",
+    title: "랜딩 페이지 히어로 섹션 수정",
+    startDate: "2026.02.02",
+    endDate: "2026.02.10",
+    teamAvatars: ["url1", "url2", "url3", "url4"],
+    extraTeamCount: 0,
+    status: "todo",
+    progress: 0,
+  },
+  {
+    id: "4",
+    title: "랜딩 페이지 히어로 섹션 수정",
+    startDate: "2026.02.02",
+    endDate: "2026.02.10",
+    teamAvatars: ["url1", "url2", "url3", "url4"],
+    extraTeamCount: 0,
+    status: "blocked",
+    progress: 42,
+  },
 ];
 
 const ProjectPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* 1. 우측 상단 액션 버튼 영역 (TaskHeader 스타일 재사용) */}
+      {/* 프로젝트 헤더 */}
       <div className="flex items-center justify-end px-12 py-6 gap-2 bg-white">
         <button className="flex h-10 px-3 rounded-md border border-gray-300 bg-white text-body2 text-gray-700 hover:bg-gray-100 items-center">
           <img
             src={IconFilter}
             alt="필터"
-            className="w-5 h-5 mr-1"
+            className="w-5 h-5"
           />
           필터
         </button>
@@ -57,7 +65,7 @@ const ProjectPage = () => {
           <img
             src={IconSort}
             alt="정렬"
-            className="w-5 h-5 mr-1"
+            className="w-5 h-5"
           />
           정렬
         </button>
@@ -65,7 +73,7 @@ const ProjectPage = () => {
           <img
             src={IconPlus}
             alt=""
-            className="w-5 h-5 mr-1"
+            className="w-5 h-5"
           />
           프로젝트 추가하기
         </button>
@@ -99,7 +107,7 @@ const ProjectPage = () => {
         <div className="bg-[#fff4f4] rounded-2xl p-6 flex flex-col justify-between h-32">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">지연 프로젝트</div>
-            <div className="text-caption text-red-500">⚠️ D+3 이상 1개</div>
+            <div className="text-caption text-red-500">D+3 이상 1개</div>
           </div>
           <div className="text-4xl font-bold text-[#dd4040] text-right">2</div>
         </div>
@@ -108,7 +116,7 @@ const ProjectPage = () => {
         <div className="bg-[#f4f6ff] rounded-2xl p-6 flex flex-col justify-between h-32">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">이번 주 마감 프로젝트</div>
-            <div className="text-caption text-gray-500">🕒 D-3 이내 2개</div>
+            <div className="text-caption text-gray-500">D-3 이내 2개</div>
           </div>
           <div className="text-4xl font-bold text-[#4269E9] text-right">4</div>
         </div>
