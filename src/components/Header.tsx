@@ -20,7 +20,7 @@ const tabInactive = "bg-transparent text-white hover:text-white";
 
 type Status = "online" | "offline" | "away";
 
-export default function Header() {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<Status>("online");
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -105,4 +105,5 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+export default Header;
