@@ -1,4 +1,4 @@
-import type { Task, TaskStatus } from "../types/types";
+import type { Task, TaskStatus } from "../../../types/task";
 
 type Props = { task: Task[] };
 
@@ -18,7 +18,7 @@ const statusColor: Record<TaskStatus, string> = {
 
 const KanvanView = ({ task }: Props) => {
   return (
-    <div className="grid grid-cols-4 gap-4 px-12 bg-white pt-1">
+    <div className="grid grid-cols-4 gap-4 px-12 pt-1">
       {columns.map((col) => {
         const items = task.filter((t) => t.status === col.key);
         return (
@@ -28,9 +28,7 @@ const KanvanView = ({ task }: Props) => {
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <span
-                  className={`w-2 h-2 rounded-full ${statusColor[col.key]}`}
-                />
+                <span className={`w-2 h-2 rounded-full ${statusColor[col.key]}`} />
                 <span className="text-body1 text-gray-900">{col.title}</span>
                 <span className="text-body2 text-gray-600">{items.length}</span>
               </div>
@@ -46,21 +44,13 @@ const KanvanView = ({ task }: Props) => {
                   <div className="text-h4 text-gray-900">{t.title}</div>
                   <div className="mt-3 flex items-center gap-2">
                     <span className="text-caption px-2 py-1 rounded-full bg-gray-200 text-gray-700">
-                      {t.priority === "high"
-                        ? "높음"
-                        : t.priority === "normal"
-                          ? "보통"
-                          : "낮음"}
+                      {t.priority === "high" ? "높음" : t.priority === "normal" ? "보통" : "낮음"}
                     </span>
                   </div>
                 </div>
               ))}
 
-              {items.length === 0 && (
-                <div className="text-caption text-gray-600 py-8 text-center">
-                  항목 없음
-                </div>
-              )}
+              {items.length === 0 && <div className="text-caption text-gray-600 py-8 text-center">항목 없음</div>}
             </div>
           </div>
         );

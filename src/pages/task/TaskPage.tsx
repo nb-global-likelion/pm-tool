@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import ListView from "./components/ListView";
-import type { Task } from "./types/types";
+import type { Task } from "../../types/task";
 import TaskHeader from "./components/TaskHeader";
 import Pagination from "../../components/pagination";
 import KanvanView from "./components/KanvanView";
@@ -67,7 +67,10 @@ export default function TasksPage() {
 
   return (
     <div className="bg-white">
-      <TaskHeader view={view} onChangeView={setView} />
+      <TaskHeader
+        view={view}
+        onChangeView={setView}
+      />
 
       {view === "list" ? (
         <>
