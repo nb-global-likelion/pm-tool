@@ -2,25 +2,20 @@ import { useState } from "react";
 import ProjectDetailHeader from "../components/ProjectDetailHeader";
 import Overview from "../components/Overview";
 import List from "../components/List";
-import type { TaskStatus } from "../../../types/task";
+import type { Task } from "../../../types/task";
+import Board from "../components/Board";
 
 type Tab = "overview" | "list" | "calendar" | "board";
 
-type DetailTaskRow = {
-  id: string;
-  title: string;
-  assignee: string;
-  status: TaskStatus;
-  dueDate: string; // "2026.02.13"
-};
-
-const mockDetailTasks: DetailTaskRow[] = [
+// task.ts의 Task를 사용하는데 API 작업되면 Project용 업무.ts를 다시 만들고 연결
+const mockDetailTasks: Task[] = [
   {
     id: "1",
     title: "랜딩 페이지 히어로 섹션 수정",
-    assignee: "Nguyen Thi Thao Hien",
+    assignee: "김민수",
     status: "done",
     dueDate: "2026.02.13",
+    priority: "normal",
   },
   {
     id: "2",
@@ -28,6 +23,7 @@ const mockDetailTasks: DetailTaskRow[] = [
     assignee: "Dang Tu Minh Nhat",
     status: "inProgress",
     dueDate: "2026.02.13",
+    priority: "high",
   },
   {
     id: "3",
@@ -35,6 +31,7 @@ const mockDetailTasks: DetailTaskRow[] = [
     assignee: "Nguyen Thi Thao Hien",
     status: "todo",
     dueDate: "2026.02.13",
+    priority: "low",
   },
   {
     id: "4",
@@ -42,6 +39,15 @@ const mockDetailTasks: DetailTaskRow[] = [
     assignee: "Nguyen Thi Thao Hien",
     status: "blocked",
     dueDate: "2026.02.13",
+    priority: "normal",
+  },
+  {
+    id: "5",
+    title: "랜딩 페이지 히어로 섹션 수정",
+    assignee: "김민수",
+    status: "done",
+    dueDate: "2026.02.13",
+    priority: "high",
   },
 ];
 
@@ -64,7 +70,7 @@ const ProjectDetailPage = () => {
         {tab === "overview" && <Overview />}
         {tab === "list" && <List tasks={mockDetailTasks} />}
         {tab === "calendar" && <div>캘린더</div>}
-        {tab === "board" && <div>보드</div>}
+        {tab === "board" && <Board tasks={mockDetailTasks} />}
       </div>
     </div>
   );

@@ -1,17 +1,9 @@
 import Pagination from "../../../components/pagination";
 import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../constants/status";
-import type { TaskStatus } from "../../../types/task";
-
-type Row = {
-  id: string;
-  title: string;
-  assignee: string;
-  status: TaskStatus;
-  dueDate: string; // "2026.02.13"
-};
+import type { Task } from "../../../types/task";
 
 type Props = {
-  tasks: Row[];
+  tasks: Task[];
 };
 
 const List = ({ tasks }: Props) => {
@@ -45,7 +37,7 @@ const List = ({ tasks }: Props) => {
               </div>
 
               <div>{t.title}</div>
-              <div>{t.assignee}</div>
+              <div>{t.assignee ?? "-"}</div>
 
               <div>
                 <span className={`${STATUS_BADGE_BASE} ${TASK_STATUS_STYLES[t.status]}`}>

@@ -46,7 +46,7 @@ export default function Overview() {
     <div className="grid grid-cols-[1fr_510px] gap-10 px-12 pt-6">
       {/* ================= LEFT ================= */}
       <div className="space-y-15">
-        {/* 1. 진행률 */}
+        {/* 진행률 */}
         <div>
           <div className="flex items-center justify-between">
             <div className="text-h3 text-gray-900 ">
@@ -62,7 +62,7 @@ export default function Overview() {
               style={{ width: `${progress}%` }}
             />
           </div>
-          {/* 2. 통계 박스 */}
+          {/* 통계 박스 */}
           <div className="mt-8 rounded-xl border border-gray-200 overflow-hidden">
             <div className="grid grid-cols-3">
               <div className="p-5">
@@ -86,7 +86,7 @@ export default function Overview() {
           </div>
         </div>
 
-        {/* 3. 프로젝트 개요 */}
+        {/* 프로젝트 개요 */}
         <div className="space-y-5">
           <div className="text-h3 text-gray-900">프로젝트 개요</div>
           <textarea
@@ -95,7 +95,7 @@ export default function Overview() {
           />
         </div>
 
-        {/* 4. 프로젝트 역할 */}
+        {/* 프로젝트 역할 */}
         <div className="space-y-5">
           <div className="text-h3 text-gray-900">프로젝트 역할</div>
 

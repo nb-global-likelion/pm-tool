@@ -9,4 +9,5 @@ export type Task = {
   priority: Priority;
   dueDate: string; // "YYYY.MM.DD"
   status: TaskStatus;
+  assignee?: string;
 };
