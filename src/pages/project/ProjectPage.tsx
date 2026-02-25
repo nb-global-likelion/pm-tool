@@ -3,6 +3,7 @@ import IconSort from "../../assets/icon-sort.svg";
 import IconPlus from "../../assets/icon-plus.svg";
 import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../constants/status";
 import type { Project } from "../../types/project";
+import Pagination from "../../components/pagination";
 
 // 임시 데이터
 const mockProjects: Project[] = [
@@ -69,7 +70,7 @@ const ProjectPage = () => {
           />
           정렬
         </button>
-        <button className="flex h-10 px-4 rounded-md bg-[#4269E9] text-white text-body2 hover:opacity-90 items-center">
+        <button className="flex h-10 px-4 rounded-md bg-primary-500 text-white text-body2 hover:opacity-90 items-center">
           <img
             src={IconPlus}
             alt=""
@@ -82,7 +83,7 @@ const ProjectPage = () => {
       {/*카드 4개 영역 */}
       <div className="grid grid-cols-4 gap-6 px-12 mb-8">
         {/* 전체 프로젝트 */}
-        <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-between h-32">
+        <div className="bg-gray-200 rounded-xl p-6 flex flex-col justify-between h-40">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">이번 달 전체 프로젝트 수</div>
             <div className="text-caption text-gray-500">
@@ -93,7 +94,7 @@ const ProjectPage = () => {
         </div>
 
         {/* 진행 중 프로젝트 */}
-        <div className="bg-[#e8fff2] rounded-2xl p-6 flex flex-col justify-between h-32">
+        <div className="bg-[#e8fff2] rounded-2xl p-6 flex flex-col justify-between h-40">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">진행 중 프로젝트</div>
             <div className="text-caption text-gray-500">
@@ -104,7 +105,7 @@ const ProjectPage = () => {
         </div>
 
         {/* 지연 프로젝트 */}
-        <div className="bg-[#fff4f4] rounded-2xl p-6 flex flex-col justify-between h-32">
+        <div className="bg-[#fff4f4] rounded-2xl p-6 flex flex-col justify-between h-40">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">지연 프로젝트</div>
             <div className="text-caption text-red-500">D+3 이상 1개</div>
@@ -113,12 +114,12 @@ const ProjectPage = () => {
         </div>
 
         {/* 이번 주 마감 프로젝트 */}
-        <div className="bg-[#f4f6ff] rounded-2xl p-6 flex flex-col justify-between h-32">
+        <div className="bg-primary-100 rounded-2xl p-6 flex flex-col justify-between h-40">
           <div>
             <div className="text-body1 text-gray-900 font-bold mb-1">이번 주 마감 프로젝트</div>
             <div className="text-caption text-gray-500">D-3 이내 2개</div>
           </div>
-          <div className="text-4xl font-bold text-[#4269E9] text-right">4</div>
+          <div className="text-4xl font-bold text-primary-500 text-right">4</div>
         </div>
       </div>
 
@@ -193,6 +194,7 @@ const ProjectPage = () => {
           ))}
         </div>
       </div>
+      <Pagination />
     </div>
   );
 };
