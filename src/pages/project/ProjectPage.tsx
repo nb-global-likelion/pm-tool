@@ -51,7 +51,7 @@ const mockProjects: Project[] = [
 
 const ProjectPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* 프로젝트 헤더 */}
       <div className="flex items-center justify-end px-12 py-6 gap-2 bg-white">
         <button className="flex h-10 px-3 rounded-md border border-gray-300 bg-white text-body2 text-gray-700 hover:bg-gray-100 items-center">

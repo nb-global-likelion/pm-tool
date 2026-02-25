@@ -5,10 +5,10 @@ type Props = { task: Task[] };
 
 const ListView = ({ task }: Props) => {
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="overflow-hidden">
       {/* 헤더 */}
-      <div className="px-12 py-2 bg-gray-200 border border-gray-100">
-        <div className="grid grid-cols-[40px_1fr_180px_120px_120px_120px] items-center text-body2 text-gray-600">
+      <div className="px-12 py-2 bg-gray-200 border border-gray-100 h-16 flex items-center">
+        <div className="grid grid-cols-[40px_1fr_180px_120px_120px_120px] text-body2 text-gray-600 w-full">
           <div>
             <input type="checkbox" />
           </div>
@@ -24,21 +24,19 @@ const ListView = ({ task }: Props) => {
         {task.map((t) => (
           <div
             key={t.id}
-            className="px-12 py-4 hover:bg-gray-50 transition"
+            className="h-[76px] px-12 py-4 hover:bg-gray-50 transition flex items-center"
           >
-            <div className="text-body2 grid grid-cols-[40px_1fr_180px_120px_120px_120px] items-center">
+            <div className="text-body2 grid grid-cols-[40px_1fr_180px_120px_120px_120px] w-full">
               <div>
                 <input type="checkbox" />
               </div>
 
               <div>{t.title}</div>
 
-              <div className="text-body2">{t.file ?? "-"}</div>
-              <div className="text-body2">
-                {t.priority === "high" ? "높음" : t.priority === "normal" ? "보통" : "낮음"}
-              </div>
+              <div>{t.file ?? "-"}</div>
+              <div>{t.priority === "high" ? "높음" : t.priority === "normal" ? "보통" : "낮음"}</div>
 
-              <span className="text-body2">{t.dueDate}</span>
+              <span>{t.dueDate}</span>
               <div>
                 <span className={`${STATUS_BADGE_BASE} ${TASK_STATUS_STYLES[t.status]}`}>
                   {TASK_STATUS_LABEL[t.status]}

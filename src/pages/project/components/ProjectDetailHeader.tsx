@@ -42,7 +42,7 @@ const ProjectDetailHeader = ({
   onClickAddTask,
 }: Props) => {
   return (
-    <section className="bg-white">
+    <section className="px-12 pt-6">
       <div className="flex items-start justify-between">
         <div>
           <div className="flex items-center gap-2">

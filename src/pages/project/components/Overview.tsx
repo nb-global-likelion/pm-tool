@@ -43,7 +43,7 @@ export default function Overview() {
   ];
 
   return (
-    <div className="grid grid-cols-[1fr_510px] gap-10">
+    <div className="grid grid-cols-[1fr_510px] gap-10 px-12 pt-6">
       {/* ================= LEFT ================= */}
       <div className="space-y-15">
         {/* 1. 진행률 */}
