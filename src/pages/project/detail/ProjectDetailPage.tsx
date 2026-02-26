@@ -4,6 +4,7 @@ import Overview from "../components/Overview";
 import List from "../components/List";
 import type { Task } from "../../../types/task";
 import Board from "../components/Board";
+import Calender from "../components/Calendar";
 
 type Tab = "overview" | "list" | "calendar" | "board";
 
@@ -14,7 +15,7 @@ const mockDetailTasks: Task[] = [
     title: "랜딩 페이지 히어로 섹션 수정",
     assignee: "김민수",
     status: "done",
-    dueDate: "2026.02.13",
+    dueDate: "2026.02.15",
     priority: "normal",
   },
   {
@@ -22,7 +23,7 @@ const mockDetailTasks: Task[] = [
     title: "랜딩 페이지 히어로 개발",
     assignee: "Dang Tu Minh Nhat",
     status: "inProgress",
-    dueDate: "2026.02.13",
+    dueDate: "2026.02.17",
     priority: "high",
   },
   {
@@ -30,7 +31,7 @@ const mockDetailTasks: Task[] = [
     title: "랜딩 페이지 히어로 섹션 수정",
     assignee: "Nguyen Thi Thao Hien",
     status: "todo",
-    dueDate: "2026.02.13",
+    dueDate: "2026.02.02",
     priority: "low",
   },
   {
@@ -38,7 +39,7 @@ const mockDetailTasks: Task[] = [
     title: "랜딩 페이지 히어로 섹션 수정",
     assignee: "Nguyen Thi Thao Hien",
     status: "blocked",
-    dueDate: "2026.02.13",
+    dueDate: "2026.03.03",
     priority: "normal",
   },
   {
@@ -46,7 +47,7 @@ const mockDetailTasks: Task[] = [
     title: "랜딩 페이지 히어로 섹션 수정",
     assignee: "김민수",
     status: "done",
-    dueDate: "2026.02.13",
+    dueDate: "2026.02.28",
     priority: "high",
   },
 ];
@@ -69,7 +70,7 @@ const ProjectDetailPage = () => {
       <div>
         {tab === "overview" && <Overview />}
         {tab === "list" && <List tasks={mockDetailTasks} />}
-        {tab === "calendar" && <div>캘린더</div>}
+        {tab === "calendar" && <Calender tasks={mockDetailTasks} />}
         {tab === "board" && <Board tasks={mockDetailTasks} />}
       </div>
     </div>
