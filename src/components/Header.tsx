@@ -10,9 +10,9 @@ import IconChat from "../assets/icon-chat.svg";
 import IconSetting from "../assets/icon-setting.svg";
 import ProfileDropdown from "./ProfileDropdown";
 import { useEffect, useRef, useState } from "react";
+import Chat from "./Chat";
 
-const tabBase =
-  "flex items-center justify-center gap-1 px-4 py-2 rounded-lg text-body2 transition select-none";
+const tabBase = "flex items-center justify-center gap-1 px-4 py-2 rounded-lg text-body2 transition select-none";
 
 const tabActive = "bg-white text-gray-900";
 
@@ -24,6 +24,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<Status>("online");
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
     const onDown = (e: MouseEvent) => {
@@ -39,10 +40,19 @@ const Header = () => {
     <header className="h-12 bg-gray-900 px-12 flex items-center justify-between">
       {/* 프로필 영역 */}
       {/* Todo: 프로필 API 연결 */}
-      <div ref={rootRef} className="flex items-center gap-4 relative">
-        <img src={profile} className="w-6 h-6" />
+      <div
+        ref={rootRef}
+        className="flex items-center gap-4 relative"
+      >
+        <img
+          src={profile}
+          className="w-6 h-6"
+        />
         <span className="text-white">멋쟁이사자처럼</span>
-        <button type="button" onClick={() => setOpen((v) => !v)}>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+        >
           <img src={ArrowBottom} />
         </button>
         {open && (
@@ -58,9 +68,7 @@ const Header = () => {
       <div className="flex items-center justify-center gap-2">
         <NavLink
           to="/project"
-          className={({ isActive }) =>
-            [tabBase, isActive ? tabActive : tabInactive].join(" ")
-          }
+          className={({ isActive }) => [tabBase, isActive ? tabActive : tabInactive].join(" ")}
         >
           {({ isActive }) => (
             <>
@@ -75,9 +83,7 @@ const Header = () => {
 
         <NavLink
           to="/task"
-          className={({ isActive }) =>
-            [tabBase, isActive ? tabActive : tabInactive].join(" ")
-          }
+          className={({ isActive }) => [tabBase, isActive ? tabActive : tabInactive].join(" ")}
         >
           {({ isActive }) => (
             <>
@@ -94,15 +100,35 @@ const Header = () => {
       {/* 액션 */}
       <div className="flex items-center gap-6 justify-end">
         <button>
-          <img src={IconNotification} alt="알림" className="p-w-6 h-6" />
+          <img
+            src={IconNotification}
+            alt="알림"
+            className="p-w-6 h-6"
+          />
+        </button>
+        <button
+          type="button"
+          onClick={() => setChatOpen(true)}
+        >
+          <img
+            src={IconChat}
+            alt="채팅"
+            className="w-6 h-6"
+          />
         </button>
         <button>
-          <img src={IconChat} alt="채팅" className="w-6 h-6" />
-        </button>
-        <button>
-          <img src={IconSetting} alt="더보기" className="p-w-6 h-6" />
+          <img
+            src={IconSetting}
+            alt="더보기"
+            className="p-w-6 h-6"
+          />
         </button>
       </div>
+
+      <Chat
+        open={chatOpen}
+        onClose={() => setChatOpen(false)}
+      />
     </header>
   );
 };
