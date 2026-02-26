@@ -4,6 +4,7 @@ import IconPlus from "../../assets/icon-plus.svg";
 import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../constants/status";
 import type { Project } from "../../types/project";
 import Pagination from "../../components/pagination";
+import { useNavigate } from "react-router-dom";
 
 // 임시 데이터
 const mockProjects: Project[] = [
@@ -50,6 +51,7 @@ const mockProjects: Project[] = [
 ];
 
 const ProjectPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       {/* 프로젝트 헤더 */}
@@ -148,6 +150,7 @@ const ProjectPage = () => {
             <div
               key={p.id}
               className="px-12 py-4 hover:bg-gray-50 transition"
+              onClick={() => navigate(`/project/projectId`)}
             >
               <div className="grid grid-cols-[40px_1fr_200px_150px_120px_80px] items-center text-body2 text-gray-900">
                 <div>
