@@ -31,10 +31,10 @@ const ListView = ({ task }: Props) => {
                 <input type="checkbox" />
               </div>
 
-              <div>{t.title}</div>
+              <span>{t.title}</span>
 
-              <div>{t.file ?? "-"}</div>
-              <div>{t.priority === "high" ? "높음" : t.priority === "normal" ? "보통" : "낮음"}</div>
+              <span>{t.file ?? "-"}</span>
+              <span>{t.priority === "high" ? "높음" : t.priority === "normal" ? "보통" : "낮음"}</span>
 
               <span>{t.dueDate}</span>
               <div>
