@@ -185,7 +185,6 @@ const ProjectPage = () => {
                     key={idx}
                     className="inline-block h-9 w-9 rounded-full ring-1 ring-white bg-gray-300"
                     src={avatar}
-                    alt=""
                   />
                 ))}
                 {p.extraTeamCount > 0 && (

@@ -12,11 +12,11 @@ export default function Overview() {
   };
 
   const members = [
-    { name: "김철수", role: "팀장" },
-    { name: "Nguyen Thi Thao Hien ", role: "베트남 마케터" },
-    { name: "Dang Tu Minh Nhat", role: "베트남 백엔드 개발자" },
-    { name: "Manh Hung", role: "베트남 프론트 개발자" },
-    { name: "Hoang Phi", role: "베트남 마케터" },
+    { name: "김철수", role: "팀장", avatar: "https://i.pravatar.cc/150?img=11" },
+    { name: "Nguyen Thi Thao Hien ", role: "베트남 마케터", avatar: "https://i.pravatar.cc/150?img=12" },
+    { name: "Dang Tu Minh Nhat", role: "베트남 백엔드 개발자", avatar: "https://i.pravatar.cc/150?img=33" },
+    { name: "Manh Hung", role: "베트남 프론트 개발자", avatar: "https://i.pravatar.cc/150?img=30" },
+    { name: "Hoang Phi", role: "베트남 마케터", avatar: "https://i.pravatar.cc/150?img=52" },
   ];
 
   const updateGroups = [
@@ -112,7 +112,10 @@ export default function Overview() {
                 key={m.name}
                 className="flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-full bg-gray-200" />
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src={m.avatar}
+                />
                 <div className="min-w-0">
                   <div className="text-body1 text-gray-900 truncate">{m.name}</div>
                   <div className="text-body2 text-gray-600 truncate">{m.role}</div>
