@@ -9,6 +9,7 @@ import IconNotification from "../assets/icon-notification.svg";
 import IconChat from "../assets/icon-chat.svg";
 import IconSetting from "../assets/icon-setting.svg";
 import ProfileDropdown from "./ProfileDropdown";
+import NotificationDropdown from "./NotificationDropdown";
 import { useEffect, useRef, useState } from "react";
 import Chat from "./Chat";
 
@@ -21,15 +22,22 @@ const tabInactive = "bg-transparent text-white hover:text-white";
 type Status = "online" | "offline" | "away";
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [notificationOpen, setNotificationOpen] = useState(false);
   const [status, setStatus] = useState<Status>("online");
-  const rootRef = useRef<HTMLDivElement | null>(null);
+  const profileRef = useRef<HTMLDivElement | null>(null);
+  const notificationRef = useRef<HTMLDivElement | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
     const onDown = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) {
-        setOpen(false);
+      const target = e.target as Node;
+      const clickedProfile = profileRef.current?.contains(target);
+      const clickedNotification = notificationRef.current?.contains(target);
+
+      if (!clickedProfile && !clickedNotification) {
+        setProfileOpen(false);
+        setNotificationOpen(false);
       }
     };
     document.addEventListener("mousedown", onDown);
@@ -41,7 +49,7 @@ const Header = () => {
       {/* 프로필 영역 */}
       {/* Todo: 프로필 API 연결 */}
       <div
-        ref={rootRef}
+        ref={profileRef}
         className="flex items-center gap-4 relative"
       >
         <img
@@ -51,15 +59,15 @@ const Header = () => {
         <span className="text-white">멋쟁이사자처럼</span>
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setProfileOpen((v) => !v)}
         >
           <img src={ArrowBottom} />
         </button>
-        {open && (
+        {profileOpen && (
           <ProfileDropdown
             status={status}
             onChangeStatus={(s) => setStatus(s)}
-            onClose={() => setOpen(false)}
+            onClose={() => setProfileOpen(false)}
           />
         )}
       </div>
@@ -98,12 +106,18 @@ const Header = () => {
       </div>
 
       {/* 액션 */}
-      <div className="flex items-center gap-6 justify-end">
-        <button>
+      <div
+        ref={notificationRef}
+        className="flex items-center gap-6 justify-end relative"
+      >
+        <button
+          type="button"
+          onClick={() => setNotificationOpen((v) => !v)}
+        >
           <img
             src={IconNotification}
             alt="알림"
-            className="p-w-6 h-6"
+            className="w-6 h-6"
           />
         </button>
         <button
@@ -123,6 +137,7 @@ const Header = () => {
             className="p-w-6 h-6"
           />
         </button>
+        {notificationOpen && <NotificationDropdown />}
       </div>
 
       <Chat
