@@ -12,7 +12,7 @@ type Props = {
 };
 
 const toggleBtnBase =
-  "w-11 h-10 rounded-md grid place-items-center border border-gray-300  hover:bg-gray-100 transition";
+  "w-10 h-10 rounded-md grid place-items-center border border-gray-300  hover:bg-gray-100 transition";
 const toggleBtnActive = "bg-gray-200";
 
 export default function TaskHeader({ view, onChangeView }: Props) {

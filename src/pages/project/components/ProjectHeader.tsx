@@ -4,7 +4,7 @@ import IconPlus from "../../../assets/icon-plus.svg";
 
 const ProjectHeader = () => {
   return (
-    <div className="flex items-center justify-end px-12 py-6 gap-2 ">
+    <div className="flex items-center justify-end px-12 py-4 gap-2 ">
       <button className="flex h-10 px-3 rounded-md border border-gray-300  text-body2 text-gray-700 hover:bg-gray-100 items-center">
         <img
           src={IconFilter}
