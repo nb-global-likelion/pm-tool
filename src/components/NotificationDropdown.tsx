@@ -71,21 +71,21 @@ export default function NotificationDropdown() {
           <button
             type="button"
             onClick={() => setActiveTab("all")}
-            className={`border-b pb-1 ${activeTab === "all" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
+            className={`border-b pb-4 -mb-px ${activeTab === "all" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
           >
             전체
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("request")}
-            className={`border-b pb-1 ${activeTab === "request" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
+            className={`border-b pb-4 -mb-px ${activeTab === "request" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
           >
             요청
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("unread")}
-            className={`border-b pb-1 ${activeTab === "unread" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
+            className={`border-b pb-4 -mb-px ${activeTab === "unread" ? "text-gray-900 font-semibold border-gray-900" : "border-transparent"}`}
           >
             읽지 않음 (6)
           </button>

@@ -55,7 +55,7 @@ const mockDetailTasks: Task[] = [
 const ProjectDetailPage = () => {
   const [tab, setTab] = useState<Tab>("overview");
   return (
-    <div className="min-h-screen">
+    <div>
       <ProjectDetailHeader
         title="랜딩 페이지 히어로 섹션 수정"
         status="inProgress"
