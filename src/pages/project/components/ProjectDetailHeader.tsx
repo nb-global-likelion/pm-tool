@@ -70,7 +70,6 @@ const ProjectDetailHeader = ({
             <img
               key={`${a}-${idx}`}
               src={a}
-              alt=""
               className="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-300"
             />
           ))}
@@ -107,7 +106,7 @@ const ProjectDetailHeader = ({
         <div className="flex items-center gap-2">
           <button
             onClick={onClickFilter}
-            className="flex h-10 px-3 rounded-md border border-gray-300 bg-white text-body2 text-gray-700 hover:bg-gray-100 items-center"
+            className="flex h-10 px-3 rounded-md border border-gray-300 text-body2 text-gray-700 hover:bg-gray-100 items-center"
           >
             <img
               src={IconFilter}
@@ -118,7 +117,7 @@ const ProjectDetailHeader = ({
           </button>
           <button
             onClick={onClickSort}
-            className="flex h-10 px-3 rounded-md border border-gray-300 bg-white text-body2 text-gray-700 hover:bg-gray-100 items-center"
+            className="flex h-10 px-3 rounded-md border border-gray-300 text-body2 text-gray-700 hover:bg-gray-100 items-center"
           >
             <img
               src={IconSort}
