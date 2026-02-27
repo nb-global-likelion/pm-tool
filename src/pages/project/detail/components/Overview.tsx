@@ -1,5 +1,5 @@
-import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../constants/status";
-import IconPlus from "../../../assets/icon-plus-gray.svg";
+import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../../constants/status";
+import IconPlus from "../../../../assets/icon-plus-gray.svg";
 
 export default function Overview() {
   // 임시 데이터 (나중에 API 연결)

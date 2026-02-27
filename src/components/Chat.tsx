@@ -14,7 +14,7 @@ type Conversation = {
   name: string;
   avatarUrl: string;
   lastMessage: string;
-  lastTime: string; // "11:58"
+  lastTime: string;
   unreadCount: number;
   status: "online" | "offline";
 };

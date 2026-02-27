@@ -1,6 +1,6 @@
-import Pagination from "../../../components/pagination";
-import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../constants/status";
-import type { Task } from "../../../types/task";
+import Pagination from "../../../../components/pagination";
+import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../../constants/status";
+import type { Task } from "../../../../types/task";
 
 type Props = {
   tasks: Task[];

@@ -1,7 +1,7 @@
-import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../constants/status";
-import IconFilter from "../../../assets/icon-filter.svg";
-import IconSort from "../../../assets/icon-sort.svg";
-import IconPlus from "../../../assets/icon-plus.svg";
+import { STATUS_BADGE_BASE, TASK_STATUS_LABEL, TASK_STATUS_STYLES } from "../../../../constants/status";
+import IconFilter from "../../../../assets/icon-filter.svg";
+import IconSort from "../../../../assets/icon-sort.svg";
+import IconPlus from "../../../../assets/icon-plus.svg";
 
 type Tab = "overview" | "list" | "calendar" | "board";
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import type { Task } from "../../../types/task";
-import IconPlus from "../../../assets/icon-plus-gray.svg";
+import type { Task } from "../../../../types/task";
+import IconPlus from "../../../../assets/icon-plus-gray.svg";
 
 interface CalendarProps {
   tasks: Task[];

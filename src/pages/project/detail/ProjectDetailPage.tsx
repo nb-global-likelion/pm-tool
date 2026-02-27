@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ProjectDetailHeader from "../components/ProjectDetailHeader";
-import Overview from "../components/Overview";
-import List from "../components/List";
+import ProjectDetailHeader from "./components/ProjectDetailHeader";
+import Overview from "./components/Overview";
+import List from "./components/List";
 import type { Task } from "../../../types/task";
-import Board from "../components/Board";
-import Calender from "../components/Calendar";
+import Board from "./components/Board";
+import Calender from "./components/Calendar";
 
 type Tab = "overview" | "list" | "calendar" | "board";
 
