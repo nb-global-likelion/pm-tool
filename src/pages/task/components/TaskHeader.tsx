@@ -18,7 +18,7 @@ const toggleBtnActive = "bg-gray-200";
 export default function TaskHeader({ view, onChangeView }: Props) {
   return (
     <div className="flex items-center justify-between px-12 py-4 ">
-      {/* left: view toggle */}
+      {/* left */}
       <div className="flex items-center gap-2">
         <button
           type="button"
@@ -44,7 +44,7 @@ export default function TaskHeader({ view, onChangeView }: Props) {
         </button>
       </div>
 
-      {/* right: actions */}
+      {/* right */}
       <div className="flex items-center gap-2">
         <button className="flex h-10 px-3 rounded-md border border-gray-300  text-body2 text-gray-700 hover:bg-gray-100 items-center">
           <img

@@ -14,22 +14,13 @@ const Calender = ({ tasks }: CalendarProps) => {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
-  // const firstDay = new Date(year, month, 1);
-  // const startDay = firstDay.getDay();
-
-  // const lastDate = new Date(year, month + 1, 0).getDate();
-
   const calendarDays = useMemo(() => {
     const temp: Date[] = [];
-
-    // 이번달 1일
     const first = new Date(year, month, 1);
 
-    // 1일이 포함된 주의 "일요일"부터 시작
     const start = new Date(first);
     start.setDate(first.getDate() - first.getDay());
 
-    // 무조건 5주(35칸)
     for (let i = 0; i < 35; i++) {
       const d = new Date(start);
       d.setDate(start.getDate() + i);
@@ -111,9 +102,7 @@ const Calender = ({ tasks }: CalendarProps) => {
               >
                 {date && (
                   <>
-                    {/* 날짜 숫자: 우측 상단, 오늘은 파란색 */}
                     <div className="flex justify-between">
-                      {/* + 버튼 */}
                       <button
                         className="h-5 w-5 rounded border border-gray-500 opacity-0 group-hover:opacity-100 hover:bg-gray-50"
                         type="button"
@@ -127,7 +116,6 @@ const Calender = ({ tasks }: CalendarProps) => {
                       </span>
                     </div>
 
-                    {/* 업무 */}
                     <div className="mt-4 space-y-1">
                       {dayTasks.map((task) => (
                         <div
