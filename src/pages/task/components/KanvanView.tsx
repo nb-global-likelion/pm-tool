@@ -39,7 +39,7 @@ const KanvanView = ({ task }: Props) => {
               {items.map((t) => (
                 <div
                   key={t.id}
-                  className="bg-white rounded-xl border border-gray-300 p-4"
+                  className="rounded-xl border border-gray-300 p-4"
                 >
                   <div className="text-h4 text-gray-900">{t.title}</div>
                   <div className="mt-3 flex items-center gap-2">

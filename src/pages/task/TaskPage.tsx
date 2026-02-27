@@ -66,7 +66,7 @@ export default function TasksPage() {
   );
 
   return (
-    <div className="bg-white">
+    <div>
       <TaskHeader
         view={view}
         onChangeView={setView}
